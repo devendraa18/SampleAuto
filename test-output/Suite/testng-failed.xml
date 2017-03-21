@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="FIREFOX"/>
+  <test name="Chrome Test">
+    <parameter name="browser" value="CHROME"/>
+    <classes>
+      <class name="com.framework.tests.SampleTest"/>
+    </classes>
+  </test> <!-- Chrome Test -->
+  <test name="Firefox Test">
+    <parameter name="browser" value="FIREFOX"/>
+    <classes>
+      <class name="com.framework.tests.SampleTest"/>
+    </classes>
+  </test> <!-- Firefox Test -->
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="CHROME"/>
+    <classes>
+      <class name="com.framework.tests.SampleTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="beforeSuite"/>
+          <include name="wordPressLogin"/>
+          <include name="tearDown"/>
+          <include name="getWebDriver"/>
+          <include name="getWebDriver"/>
+          <include name="setUp2"/>
+        </methods>
+      </class> <!-- com.framework.tests.SampleTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
